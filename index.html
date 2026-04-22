@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- update 1 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,7 +37,6 @@
             line-height: 1.6;
         }
 
-        /* Loader */
         #loader {
             position: fixed;
             top: 0;
@@ -71,7 +69,6 @@
             to { transform: rotate(360deg); }
         }
 
-        /* Canvas Background */
         #canvas-bg {
             position: fixed;
             top: 0;
@@ -81,7 +78,6 @@
             z-index: 0;
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -96,14 +92,8 @@
         }
 
         @keyframes slideDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         nav .nav-container {
@@ -157,7 +147,6 @@
             width: 100%;
         }
 
-        /* Sections */
         section {
             position: relative;
             min-height: 100vh;
@@ -174,7 +163,6 @@
             margin: 0 auto;
         }
 
-        /* Hero Section */
         #home {
             opacity: 0;
             animation: fadeIn 0.8s ease-out 0.3s forwards;
@@ -262,7 +250,6 @@
             object-fit: cover;
         }
 
-        /* Section Headers */
         .section-header {
             text-align: center;
             margin-bottom: 5rem;
@@ -285,7 +272,38 @@
             text-transform: uppercase;
         }
 
-        /* Libraries Section */
+        #experience {
+            min-height: auto;
+            padding: 6rem 3rem;
+            opacity: 0;
+            animation: fadeIn 0.8s ease-out 0.45s forwards;
+        }
+
+        .skills-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .skill-tag {
+            background: var(--card);
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--primary);
+            background: rgba(30, 64, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
         #libraries {
             opacity: 0;
             animation: fadeIn 0.8s ease-out 0.5s forwards;
@@ -294,17 +312,17 @@
         .libraries-grid {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .library-card {
             background: var(--card);
             backdrop-filter: blur(10px);
             border: 1px solid var(--border);
-            border-radius: 16px;
-            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            padding: 1.5rem 1rem;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
         }
@@ -325,19 +343,18 @@
         }
 
         .library-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
             border-color: var(--primary);
-            box-shadow: 0 20px 60px rgba(30, 64, 255, 0.2);
+            box-shadow: 0 15px 40px rgba(30, 64, 255, 0.2);
         }
 
         .library-name {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: var(--text);
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
-        /* Games Section */
         #games {
             opacity: 0;
             animation: fadeIn 0.8s ease-out 0.6s forwards;
@@ -355,7 +372,7 @@
             border: 1px solid var(--border);
             border-radius: 24px;
             overflow: hidden;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.5s ease;
             text-decoration: none;
             color: inherit;
             display: block;
@@ -380,9 +397,9 @@
         }
 
         .game-card:hover {
-            transform: translateY(-15px);
+            transform: translateY(-10px);
             border-color: var(--primary);
-            box-shadow: 0 30px 80px rgba(30, 64, 255, 0.3);
+            box-shadow: 0 25px 60px rgba(30, 64, 255, 0.25);
         }
 
         .game-thumbnail {
@@ -400,7 +417,7 @@
         }
 
         .game-card:hover .game-thumbnail img {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
 
         .game-info {
@@ -412,8 +429,17 @@
         .game-title {
             font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             letter-spacing: -0.5px;
+        }
+
+        .game-role {
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 1.2rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .game-ccu {
@@ -428,7 +454,6 @@
             letter-spacing: 1px;
         }
 
-        /* Contact Section */
         #contact {
             opacity: 0;
             animation: fadeIn 0.8s ease-out 0.7s forwards;
@@ -449,12 +474,12 @@
             padding: 2.5rem 4rem;
             text-decoration: none;
             color: var(--text);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s ease;
             margin-top: 3rem;
         }
 
         .contact-card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-8px);
             border-color: var(--primary);
             box-shadow: 0 20px 60px rgba(30, 64, 255, 0.3);
         }
@@ -482,7 +507,6 @@
             font-weight: 600;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             padding: 3rem;
@@ -493,7 +517,6 @@
             z-index: 1;
         }
 
-        /* Mobile Menu */
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -503,137 +526,65 @@
             cursor: pointer;
         }
 
-        /* Responsive */
         @media (max-width: 1200px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                gap: 4rem;
-                text-align: center;
-            }
-
-            .avatar-wrapper {
-                width: 350px;
-                height: 350px;
-            }
-
-            .hero-description {
-                margin: 0 auto;
-            }
-
-            .libraries-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
+            .hero-grid { grid-template-columns: 1fr; gap: 4rem; text-align: center; }
+            .avatar-wrapper { width: 350px; height: 350px; }
+            .hero-description { margin: 0 auto; }
+            .libraries-grid { grid-template-columns: repeat(4, 1fr); }
         }
 
         @media (max-width: 968px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: rgba(10, 14, 26, 0.98);
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                border-top: 1px solid var(--border);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .hero-text h1 {
-                font-size: 3.5rem;
-            }
-
-            .section-title {
-                font-size: 3rem;
-            }
-
-            .libraries-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.5rem;
-            }
-
-            .games-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .avatar-wrapper {
-                width: 300px;
-                height: 300px;
-            }
+            .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10, 14, 26, 0.98); flex-direction: column; padding: 2rem; gap: 1.5rem; border-top: 1px solid var(--border); }
+            .nav-links.active { display: flex; }
+            .mobile-menu-btn { display: block; }
+            .hero-text h1 { font-size: 3.5rem; }
+            .section-title { font-size: 3rem; }
+            .libraries-grid { grid-template-columns: repeat(3, 1fr); }
+            .games-grid { grid-template-columns: 1fr; }
+            .avatar-wrapper { width: 300px; height: 300px; }
         }
 
         @media (max-width: 640px) {
-            section {
-                padding: 6rem 1.5rem;
-            }
-
-            nav .nav-container {
-                padding: 0 1.5rem;
-            }
-
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            .libraries-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .game-thumbnail {
-                height: 250px;
-            }
-
-            .avatar-wrapper {
-                width: 250px;
-                height: 250px;
-            }
+            section { padding: 6rem 1.5rem; }
+            nav .nav-container { padding: 0 1.5rem; }
+            .hero-text h1 { font-size: 2.5rem; }
+            .section-title { font-size: 2.2rem; }
+            .libraries-grid { grid-template-columns: repeat(2, 1fr); }
+            .game-thumbnail { height: 250px; }
+            .avatar-wrapper { width: 250px; height: 250px; }
         }
     </style>
 </head>
 <body>
-    <!-- Loader -->
     <div id="loader">
         <div class="loader-spinner"></div>
     </div>
 
-    <!-- Canvas Background -->
     <canvas id="canvas-bg"></canvas>
 
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <div class="nav-logo">YARIK1</div>
             <button class="mobile-menu-btn" id="menuBtn">☰</button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#libraries">Libraries</a></li>
-                <li><a href="#games">Games</a></li>
+                <li><a href="#experience">Expertise</a></li>
+                <li><a href="#libraries">Stack</a></li>
+                <li><a href="#games">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home">
         <div class="section-container">
             <div class="hero-grid">
                 <div class="hero-text">
                     <h1>Yarik1</h1>
-                    <p class="role">Roblox Developer</p>
+                    <p class="role">Middle System Engineer</p>
                     <p class="hero-description">
-                        Writing scalable, maintainable code with clean module boundaries.
+                        I architect clean, scalable systems with a focus on performance and maintainability. 
+                        I write code that's built to last and easy to extend.
                     </p>
                 </div>
                 <div class="avatar-section">
@@ -648,7 +599,23 @@
         </div>
     </section>
 
-    <!-- Libraries Section -->
+    <section id="experience">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">What I Do</h2>
+                <p class="section-subtitle">Core Expertise</p>
+            </div>
+            <div class="skills-cloud">
+                <span class="skill-tag">System Architecture</span>
+                <span class="skill-tag">Performance Optimization</span>
+                <span class="skill-tag">Scalable Game Loops</span>
+                <span class="skill-tag">Client-Server Architecture</span>
+                <span class="skill-tag">Clean, Maintainable Code</span>
+                <span class="skill-tag">Server Safety</span>
+            </div>
+        </div>
+    </section>
+
     <section id="libraries">
         <div class="section-container">
             <div class="section-header">
@@ -656,29 +623,29 @@
                 <p class="section-subtitle">Tools & Libraries</p>
             </div>
             <div class="libraries-grid">
-                <div class="library-card"><div class="library-name">ShapecastHitbox</div></div>
-                <div class="library-card"><div class="library-name">Signal</div></div>
-                <div class="library-card"><div class="library-name">Maid</div></div>
-                <div class="library-card"><div class="library-name">Promise</div></div>
+                <div class="library-card"><div class="library-name">Container</div></div>
+                <div class="library-card"><div class="library-name">SimpleWeight</div></div>
                 <div class="library-card"><div class="library-name">BridgeNet2</div></div>
                 <div class="library-card"><div class="library-name">ProfileStore</div></div>
                 <div class="library-card"><div class="library-name">Replica</div></div>
+                <div class="library-card"><div class="library-name">Signal</div></div>
+                <div class="library-card"><div class="library-name">Maid</div></div>
+                <div class="library-card"><div class="library-name">Promise</div></div>
+                <div class="library-card"><div class="library-name">Janitor</div></div>
+                <div class="library-card"><div class="library-name">Fusion</div></div>
+                <div class="library-card"><div class="library-name">ShapecastHitbox</div></div>
+                <div class="library-card"><div class="library-name">SimplePath</div></div>
                 <div class="library-card"><div class="library-name">QuickZone</div></div>
                 <div class="library-card"><div class="library-name">ZonePlus</div></div>
-                <div class="library-card"><div class="library-name">SimplePath</div></div>
-                <div class="library-card"><div class="library-name">Fusion</div></div>
-                <div class="library-card"><div class="library-name">React</div></div>
-                <div class="library-card"><div class="library-name">Janitor</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Games Section -->
     <section id="games">
         <div class="section-container">
             <div class="section-header">
-                <h2 class="section-title">My Games</h2>
-                <p class="section-subtitle">Featured Projects</p>
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">Shipped &amp; Scaled</p>
             </div>
             <div class="games-grid">
                 <a href="https://www.roblox.com/games/119051443230992/Dead-Mars" target="_blank" class="game-card">
@@ -687,6 +654,7 @@
                     </div>
                     <div class="game-info">
                         <h3 class="game-title">Dead Mars</h3>
+                        <p class="game-role">Main Developer</p>
                         <span class="game-ccu">PEAK CCU: 570</span>
                     </div>
                 </a>
@@ -696,6 +664,7 @@
                     </div>
                     <div class="game-info">
                         <h3 class="game-title">Wake up a Brainrot</h3>
+                        <p class="game-role">Fullstack Developer</p>
                         <span class="game-ccu">PEAK CCU: 319</span>
                     </div>
                 </a>
@@ -703,13 +672,12 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact">
         <div class="section-container">
             <div class="contact-content">
                 <div class="section-header">
                     <h2 class="section-title">Get In Touch</h2>
-                    <p class="section-subtitle">Let's Connect</p>
+                    <p class="section-subtitle">Available for work</p>
                 </div>
                 <a href="https://discord.com/users/glogangs" target="_blank" class="contact-card">
                     <svg class="contact-icon" viewBox="0 0 24 24">
@@ -729,10 +697,8 @@
     </footer>
 
     <script>
-        // Canvas Animation
         const canvas = document.getElementById('canvas-bg');
         const ctx = canvas.getContext('2d');
-        
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
@@ -751,11 +717,9 @@
                 this.vx = (Math.random() - 0.5) * 0.8;
                 this.vy = (Math.random() - 0.5) * 0.8;
             }
-
             update() {
                 this.x += this.vx;
                 this.y += this.vy;
-
                 if (mouse.x != null && mouse.y != null) {
                     let dx = mouse.x - this.x;
                     let dy = mouse.y - this.y;
@@ -764,7 +728,6 @@
                     let forceDirectionY = dy / distance;
                     let maxDistance = mouse.radius;
                     let force = (maxDistance - distance) / maxDistance;
-                    
                     if (distance < mouse.radius) {
                         let directionX = forceDirectionX * force * this.density * 0.3;
                         let directionY = forceDirectionY * force * this.density * 0.3;
@@ -772,11 +735,9 @@
                         this.y -= directionY;
                     }
                 }
-
                 if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
                 if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
             }
-
             draw() {
                 ctx.fillStyle = `rgba(30, 64, 255, 0.5)`;
                 ctx.beginPath();
@@ -788,9 +749,7 @@
 
         function init() {
             particles = [];
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle());
-            }
+            for (let i = 0; i < particleCount; i++) particles.push(new Particle());
         }
 
         function connect() {
@@ -799,7 +758,6 @@
                     let dx = particles[a].x - particles[b].x;
                     let dy = particles[a].y - particles[b].y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
-
                     if (distance < 150) {
                         let opacity = 1 - (distance / 150);
                         ctx.strokeStyle = `rgba(30, 64, 255, ${opacity * 0.25})`;
@@ -815,54 +773,17 @@
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
-                particles[i].draw();
-            }
+            for (let i = 0; i < particles.length; i++) { particles[i].update(); particles[i].draw(); }
             connect();
             requestAnimationFrame(animate);
         }
 
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            init();
-        });
-
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = e.x;
-            mouse.y = e.y;
-        });
-
-        window.addEventListener('mouseleave', () => {
-            mouse.x = null;
-            mouse.y = null;
-        });
-
-        // Loader
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loader').classList.add('hidden');
-            }, 400);
-        });
-
-        // Mobile Menu
-        document.getElementById('menuBtn').addEventListener('click', () => {
-            document.getElementById('navLinks').classList.toggle('active');
-        });
-
-        // Smooth scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    document.getElementById('navLinks').classList.remove('active');
-                }
-            });
-        });
+        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; init(); });
+        window.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
+        window.addEventListener('mouseleave', () => { mouse.x = null; mouse.y = null; });
+        window.addEventListener('load', () => { setTimeout(() => { document.getElementById('loader').classList.add('hidden'); }, 400); });
+        document.getElementById('menuBtn').addEventListener('click', () => { document.getElementById('navLinks').classList.toggle('active'); });
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function (e) { e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'center' }); document.getElementById('navLinks').classList.remove('active'); } }); });
 
         init();
         animate();
